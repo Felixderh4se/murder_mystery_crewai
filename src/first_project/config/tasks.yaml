@@ -58,7 +58,7 @@ conclusion_drawing_task:
 
 compose_case_task:
   description: >
-    Compose a compelling murder mystery and provide it to the MasterAgent
+    Compose a compelling murder mystery
   expected_output: >
     A short and interesting murder mystery
   agent: >
