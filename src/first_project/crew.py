@@ -15,48 +15,57 @@ class FirstProjectCrew():
 	agents_config = 'config/agents.yaml'
 	tasks_config = 'config/tasks.yaml'
 
+
+	@agent
+	def CaseComposerAgent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['CaseComposerAgent'],
+			verbose=True,
+			max_iter=2
+		)
+
 	@agent
 	def MasterAgent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['MasterAgent'],
 			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
-			verbose=True
+			verbose=True,
+			max_iter=2
 		)
+
 
 	@agent
 	def DetectiveAgent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['DetectiveAgent'],
-			verbose=True
+			verbose=True,
+			max_iter=2
 		)
 
 	@agent
 	def SuspectAgent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['SuspectAgent'],
-			verbose=True
+			verbose=True,
+			max_iter=2
 		)
 
 	@agent
 	def WitnessAgent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['WitnessAgent'],
-			verbose=True
+			verbose=True,
+			max_iter=2
 		)
 
 	@agent
 	def VictimAgent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['VictimAgent'],
-			verbose=True
+			verbose=True,
+			max_iter=2
 		)
 
-	@agent
-	def CaseComposerAgent(self) -> Agent:
-		return Agent(
-			config=self.agents_config['CaseComposerAgent'],
-			verbose=True
-		)
 
 	@task
 	def pacing_task(self) -> Task:

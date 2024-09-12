@@ -1,4 +1,11 @@
-pacing_task: 
+request_case_task:
+  description: >
+    Request a new murder mystery case that serves as the foundation of the session
+  expected_output: >
+    A new murder mystery case
+  agent: MasterAgent
+
+pacing_task:
   description: > 
     Monitor the player's progress and adjust the pacing of clue revelations. Ensure that clues 
     are revealed at the right moments, balancing the difficulty so the player neither becomes 
