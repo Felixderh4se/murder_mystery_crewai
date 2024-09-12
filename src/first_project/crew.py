@@ -1,6 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from langchain_openai import ChatOpenAI
+from .tools.custom_tool import MyCustomTool
 
 # Uncomment the following line to use an example of a custom tool
 # from first_project.tools.custom_tool import MyCustomTool
@@ -51,16 +52,39 @@ class FirstProjectCrew():
 		)
 
 	@task
-	def SuspectAgent(self) -> Task:
+	def pacing_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['SuspectAgent']
+			config=self.tasks_config['pacing_task']
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def hint_provision_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
+			config=self.tasks_config['hint_provision_task']
+		)
+
+	@task
+	def alibi_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['alibi_task']
+		)
+
+	@task
+	def information_relay_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['information_relay_task']
+		)
+
+	@task
+	def clue_backstory_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['clue_backstory_task']
+		)
+
+	@task
+	def conclusion_drawing_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['conclusion_drawing_task']
 		)
 
 	@crew
