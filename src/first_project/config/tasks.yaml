@@ -56,5 +56,10 @@ conclusion_drawing_task:
     leading the player to identify the correct suspect. 
   agent: DetectiveAgent
 
-
-
+compose_case_task:
+  description: >
+    Compose a compelling murder mystery and provide it to the MasterAgent
+  expected_output: >
+    A short and interesting murder mystery
+  agent: >
+    CaseComposerAgent

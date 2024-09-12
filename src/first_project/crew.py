@@ -51,10 +51,23 @@ class FirstProjectCrew():
 			verbose=True
 		)
 
+	@agent
+	def CaseComposerAgent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['CaseComposerAgent'],
+			verbose=True
+		)
+
 	@task
 	def pacing_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['pacing_task']
+		)
+
+	@task
+	def compose_case_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['compose_case_task']
 		)
 
 	@task
