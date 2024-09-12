@@ -15,24 +15,45 @@ class FirstProjectCrew():
 	tasks_config = 'config/tasks.yaml'
 
 	@agent
-	def researcher(self) -> Agent:
+	def MasterAgent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
+			config=self.agents_config['MasterAgent'],
 			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
 			verbose=True
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def DetectiveAgent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
+			config=self.agents_config['DetectiveAgent'],
+			verbose=True
+		)
+
+	@agent
+	def SuspectAgent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['SuspectAgent'],
+			verbose=True
+		)
+
+	@agent
+	def WitnessAgent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['WitnessAgent'],
+			verbose=True
+		)
+
+	@agent
+	def VictimAgent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['VictimAgent'],
 			verbose=True
 		)
 
 	@task
-	def research_task(self) -> Task:
+	def SuspectAgent(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task']
+			config=self.tasks_config['SuspectAgent']
 		)
 
 	@task
