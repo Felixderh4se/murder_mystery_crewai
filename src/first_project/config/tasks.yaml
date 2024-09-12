@@ -1,17 +1,60 @@
-research_task:
-  description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is 2024.
-  expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+pacing_task: 
+  description: > 
+    Monitor the player's progress and adjust the pacing of clue revelations. Ensure that clues 
+    are revealed at the right moments, balancing the difficulty so the player neither becomes 
+    stuck nor solves the mystery too quickly. 
+  expected_output: > 
+    A timeline outlining key moments in the investigation when major clues should
+    be revealed, considering the player's current progress. 
+  agent: MasterAgent
 
-reporting_task:
-  description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+hint_provision_task:
+  description: > 
+    Provide subtle hints to the player when they are stuck or unsure of how to proceed. The hints
+    should nudge the player towards important clues or lines of inquiry without directly revealing
+    answers. 
+  expected_output: > 
+    A set of three graded hints (ranging from subtle to direct) for each major clue or puzzle in the 
+    mystery. 
+  agent: DetectiveAgent
+
+alibi_task: 
+  description: > 
+    Present the suspect's alibi during questioning, adjusting their behavior based on whether they are 
+    guilty or innocent. If guilty, the alibi should be misleading; if innocent, it should be plausible 
+    yet leave room for doubt.
   expected_output: >
-    A fully fledge reports with the mains topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    A detailed alibi for the suspect, reflecting their behavior, motivations, and emotional state. 
+  agent: SuspectAgent
+
+information_relay_task:
+  description: > 
+    Provide key information to the player regarding events leading up to the murder, including potential
+    alibis for other suspects or strange occurrences that were observed. The witness may be helpful, 
+    evasive, or unintentionally misleading.
+  expected_output: > 
+    A detailed account from the witness, providing key details that advance the
+    investigation while adding layers of complexity. 
+  agent: WitnessAgent
+
+clue_backstory_task: 
+  description: > 
+    Reveal key information about the victim's life (emails, diaries, recordings) that can provide clues 
+    about their relationships, potential motives for the murder, and secrets they were hiding. 
+  expected_output: > 
+    A list of posthumous clues from the victim that reveal important details about
+    their past, each tied to specific suspects or motives. 
+  agent: VictimAgent
+
+conclusion_drawing_task: 
+  description: > 
+    After gathering and analyzing all clues, guide the player toward drawing a final conclusion 
+    about the identity of the murderer. This task involves synthesizing the available evidence, 
+    motives, and alibis into a coherent theory and assisting the player in making the final accusation. 
+  expected_output: > 
+    A summary of the most crucial evidence and a guided set of reasoning steps 
+    leading the player to identify the correct suspect. 
+  agent: DetectiveAgent
+
+
+
